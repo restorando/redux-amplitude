@@ -7,6 +7,6 @@ const warn = () => typeof console === 'object' &&
 
 export default () => tap(filterAmplitude, ({ key, payload }, action, store) => {
   typeof window !== 'undefined' && typeof window.amplitude === 'object'
-    ? window.amplitude.logEvent(key, payload)
+    ? window.amplitude.getInstance().logEvent(key, payload)
     : warn()
 })
